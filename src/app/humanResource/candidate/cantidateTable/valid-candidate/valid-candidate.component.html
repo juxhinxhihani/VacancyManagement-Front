@@ -1,0 +1,51 @@
+<div>
+  <!--  filter-->
+  <div class="filter">
+    <mat-form-field appearance="standard" class="full-width">
+
+      <input
+        matInput
+        (keyup)="applyFilter($event)"
+        #input
+        placeholder="Search"
+      />
+    </mat-form-field>
+  </div>
+  <table mat-table [dataSource]="tableData" matSort class="mat-elevation-z8">
+    <div  matColumnDef="CandidateName">
+      <th mat-header-cell mat-sort-header="" *matHeaderCellDef> Candidate</th>
+      <td mat-cell *matCellDef="let element"> {{element.candidateName}} {{element.candidateSurname}}</td>
+    </div>
+
+    <div  matColumnDef="idVacancy">
+      <th mat-header-cell mat-sort-header="" *matHeaderCellDef>Id Vacancy</th>
+      <td mat-cell *matCellDef="let element"> {{element.vacancy1}} </td>
+    </div>
+
+    <!--Action column-->
+    <div *ngIf="getRole() == '1'" matColumnDef="action">
+      <th mat-header-cell mat-sort-header="" *matHeaderCellDef>Schedule interview</th>
+      <td mat-cell *matCellDef="let element">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button mat-icon-button>
+          <mat-icon matTooltip="Schedule" mat-fab class="schedule" aria-label="schedule icon" (click)="scheduleInterview(element)">calendar_today</mat-icon>
+        </button>
+      </td>
+    </div>
+
+    <div *ngIf="getRole() == '1'">
+      <tr mat-header-row *matHeaderRowDef="displayedColumnsHr"></tr>
+      <tr mat-row *matRowDef="let element; columns: displayedColumnsHr;"
+          [style.background]="highlightedRowss[element.id] ? 'blue' : ''"></tr></div>
+    <div *ngIf="getRole() == '2'">
+      <tr mat-header-row *matHeaderRowDef="displayedColumnsTl"></tr>
+      <tr mat-row *matRowDef="let element; columns: displayedColumnsTl;"
+          [style.background]="highlightedRowss[element.id] ? 'lightgrey' : ''"
+          [style.color]="highlightedRowss[element.id] ? 'blue' : ''"></tr></div>
+  </table>
+
+  <mat-paginator #paginator
+                 [length]="newSize"
+                 [pageSize]="newPageSize">
+  </mat-paginator>
+</div>
+

@@ -1,0 +1,24 @@
+.mat-radio-button ~ .mat-radio-button {
+  margin-left: 16px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.example-card{
+  margin: -10px;
+}
+#btn1{
+  background-color: #f5d607;
+  color: black;
+}
+#btn2 {
+  background-color: #090a0a;
+}
+#btn1:hover{
+  transform: scale(0.95);
+}
+#btn2:hover{
+  transform: scale(0.95);
+}
+textarea{
+  width: 223px;
+}

@@ -1,0 +1,54 @@
+<div class="main-div">
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title >Form</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form  class="example-form" [formGroup]="userForm" >
+        <mat-label>Name</mat-label><br>
+        <mat-form-field class="mat-form-field-fluid">
+          <input matInput required class="control" formControlName="name" name="Name" placeholder="Name" >
+        </mat-form-field>
+        <br><br>
+        <mat-label>Surname</mat-label><br>
+        <mat-form-field class="mat-form-field-fluid">
+          <input matInput required class="control" formControlName="surname" name="Surname" placeholder="Surname" >
+        </mat-form-field>
+        <br><br>
+        <mat-label>User</mat-label><br>
+        <mat-form-field class="mat-form-field-fluid">
+          <input matInput required type="text"  class="control" formControlName="user"  name="User" placeholder="User">
+        </mat-form-field>
+        <br><br>
+        <mat-label>Phone</mat-label><br>
+        <mat-form-field class="mat-form-field-fluid">
+          <input matInput required class="control" formControlName="phone" name="Phone" placeholder="Phone" type="text">
+        </mat-form-field>
+        <br><br>
+        <mat-label>Email</mat-label><br>
+        <mat-form-field class="mat-form-field-fluid">
+          <input matInput required type="email"  class="control" formControlName="email" name="Email" placeholder="Email">
+        </mat-form-field>
+        <br><br>
+        <mat-label>Password</mat-label><br>
+        <mat-form-field class="mat-form-field-fluid">
+          <input matInput required type="password"  class="control" formControlName="password" name="Password" placeholder="Password">
+        </mat-form-field>
+        <br><br>
+        <mat-form-field appearance="fill">
+        <mat-label>Select Role</mat-label>
+        <mat-select formControlName="idRole" (ngModelChange)="formChanged()" [(ngModel)]="selected" >
+          <mat-option>None</mat-option>
+          <mat-option value= 1>Human Resource</mat-option>
+          <mat-option value= 2>Team Leader</mat-option>
+          <mat-option value= 3>Admin</mat-option>
+        </mat-select>
+      </mat-form-field>
+        <br><br>
+        <div>
+          <button id="btn1" mat-raised-button color="primary" (click)="onSubmit()" type="submit">Save</button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

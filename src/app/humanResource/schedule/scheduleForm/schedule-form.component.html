@@ -1,0 +1,33 @@
+<div class="main-div">
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title >Schedule interview for {{detail}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+
+      <form class="example-form" [formGroup]="scheduleForm">
+        <br>
+        <mat-form-field appearance="fill">
+          <mat-label>Select TeamLeader</mat-label>
+          <mat-select formControlName="id_Teamleader" (ngModelChange)="formChanged()"
+                      [(ngModel)]="selectedUser.idTeamlead">
+            <mat-option *ngFor="let can of users"  value="{{can.idUser}}">{{can.name}} {{can.surname}}</mat-option></mat-select>
+        </mat-form-field><br><br>
+        <mat-label>Start Time</mat-label><br>
+        <mat-form-field class="mat-form-field-fluid">
+          <input matInput type="datetime-local" min="{{getDateTime()}}" class="control" formControlName="start_Time" name="startTime" placeholder="Start Time">
+        </mat-form-field>
+        <br><br>
+        <mat-label>End Time</mat-label><br>
+        <mat-form-field class="mat-form-field-fluid">
+          <input matInput type="datetime-local" min="{{getDateTime()}}" class="control" formControlName="end_Time" name="endTime" placeholder="End Time">
+        </mat-form-field>
+        <br><br>
+        <div class="form-group">
+          <button id="btn1" mat-raised-button color="primary" [mat-dialog-close]="true" (click)="onSubmit()" type="submit">Save</button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
+

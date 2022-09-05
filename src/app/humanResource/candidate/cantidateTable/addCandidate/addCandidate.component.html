@@ -1,0 +1,54 @@
+<div class="main-div">
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title >Add Candidate</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form  class="example-form" [formGroup]="hrForm" >
+        <mat-label>Candidate Name</mat-label><br>
+        <mat-form-field class="mat-form-field-fluid">
+          <input matInput required class="control" formControlName="candidateName" name="CandidateName" placeholder="CandidateName" >
+        </mat-form-field>
+        <span class="text-danger" *ngIf="hrForm.controls['candidateName'].dirty && hrForm.controls['candidateName'].touched && hrForm.hasError('pattern','candidateName')">*First letter should be capital and should not contain numbers</span>
+        <br><br>
+        <mat-label>Candidate Surname</mat-label><br>
+        <mat-form-field class="mat-form-field-fluid">
+          <input matInput required class="control" formControlName="candidateSurname" name="CandidateSurname" placeholder="CandidateSurname" >
+        </mat-form-field>
+        <span  class="text-danger" *ngIf="hrForm.controls['candidateSurname'].dirty && hrForm.controls['candidateSurname'].touched && hrForm.hasError('pattern','candidateSurname')">*First letter should be capital and should not contain numbers</span>
+        <br><br>
+        <mat-label>Candidate Mobile</mat-label><br>
+        <mat-form-field class="mat-form-field-fluid">
+          <input matInput required type="string"  class="control" formControlName="candidateMobile" name="CandidateMobile" placeholder="CandidateMobile">
+        </mat-form-field>
+        <span class="text-danger" *ngIf="hrForm.controls['candidateMobile'].dirty && hrForm.controls['candidateMobile'].touched && hrForm.hasError('pattern','candidateMobile')">*Mobile is invalid</span>
+        <br><br>
+        <mat-label>Candidate Email</mat-label><br>
+        <mat-form-field class="mat-form-field-fluid">
+          <input matInput type="text"  class="control"  formControlName="candidateEmail" name="CandidateEmail" placeholder="CandidateEmail">
+<!--          <mat-error *ngIf="hrForm.value.CandidateEmail.invalid">{{getErrorMessage()}}</mat-error>-->
+        </mat-form-field>
+        <span class="text-danger" *ngIf="hrForm.controls['candidateEmail'].dirty && hrForm.controls['candidateEmail'].touched && hrForm.hasError('email','candidateEmail')">*Email is invalid</span>
+        <br><br>
+        <mat-form-field appearance="fill">
+          <mat-label>Select Position</mat-label>
+          <mat-select formControlName="id_Vacancy1" (ngModelChange)="formChanged()" [(ngModel)]="selectedVacancy.idVacancy" >
+            <mat-option>None</mat-option>
+            <mat-option *ngFor="let vac of vacancies" value= "{{vac.idVacancy}}">{{vac.vacancy1}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <span class="text-danger" *ngIf="hrForm.controls['id_Vacancy1'].touched">*Position is invalid</span>
+        <br><br>
+<!--        upload a file-->
+        <input  type="file" name="candidateCv" class="file-upload" (change)="handleUpload($event)" >
+<!--        onchange="console.log(event.target.files)"-->
+        <div class="form-group">
+          <button id="btn1" mat-raised-button color="primary"(click)="onSubmit()" type="submit">{{isUpdate ? 'Update' : 'Save'}}</button>
+          <button id="btn2" (click)="onNoClick()" mat-raised-button color="accent" tabindex="-1">Back
+          </button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
+

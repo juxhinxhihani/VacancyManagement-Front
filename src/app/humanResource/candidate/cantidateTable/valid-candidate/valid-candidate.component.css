@@ -1,0 +1,50 @@
+.full-width {
+  font-size: 14px;
+  width: 25%;
+  float: right;
+  margin-right: 20px;
+}
+mat-label{
+  padding-left: 2%;
+}
+table {
+  width: 100%;
+  margin-top: 0.5%;
+}
+th{
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+section{
+  float: right;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+}
+
+.filter{ margin-left: 23px}
+.example-container {
+  display: flex;
+  flex-direction: column;
+  max-height: 500px;
+  min-width: 300px;
+}
+.schedule:hover{
+  color: #0016a6;
+  box-shadow: #343a3c;
+  text-shadow: #343a3c;
+  transform: scale(1.2);
+}
+.mat-table {
+  overflow: auto;
+  max-height: 500px;
+}
+.mat-row.highlighted {
+  background: lightblue;
+}
+.mat-row.not-highlighted {
+  background: none
+}

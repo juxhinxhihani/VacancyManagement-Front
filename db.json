@@ -1,0 +1,242 @@
+{
+  "admin": [
+    {
+      "id": 1,
+      "email": "juxhin@gmail.com",
+      "password": "123",
+      "idRole": "3"
+    },
+    {
+      "id": 2,
+      "email": "anto@gmail.com",
+      "password": "123",
+      "idRole": "3"
+    },
+    {
+      "id": 3,
+      "email": "klara@gmail.com",
+      "password": "123",
+      "idRole": "3"
+    }
+  ],
+  "login": [
+    {
+      "name": "dionis",
+      "surname": "zhanasi",
+      "user": "dion",
+      "phone": 404452310,
+      "email": "dioniszhanasi@gmail.com",
+      "password": "1111",
+      "idRole": "1",
+      "isActive": true,
+      "id": 2
+    },
+    {
+      "name": "juxhin",
+      "surname": "Xhihani",
+      "user": "juxhin",
+      "phone": 25,
+      "email": "juxhinxhihani@gmail.com",
+      "password": "123",
+      "idRole": "1",
+      "isActive": false,
+      "id": 3
+    },
+    {
+      "name": "Eva",
+      "surname": "Noka",
+      "user": "evan",
+      "phone": 672805999,
+      "email": "evanoka@gmail.com",
+      "password": "eva99",
+      "idRole": "1",
+      "isActive": true,
+      "id": 4
+    },
+    {
+      "name": "Antoneta",
+      "surname": "Rakatun",
+      "user": "antor",
+      "phone": 682230742,
+      "email": "antonetarakatun@gmail.com",
+      "password": "anto98",
+      "idRole": "2",
+      "isActive": true,
+      "id": 5
+    },
+    {
+      "name": "Klara",
+      "surname": "Zyko",
+      "user": "klaraz",
+      "phone": 2566,
+      "email": "klara@gmail.com",
+      "password": "111",
+      "idRole": "1",
+      "isActive": true,
+      "id": 7
+    },
+    {
+      "name": "juxhin",
+      "surname": "Xhihani",
+      "user": "juxhin",
+      "phone": 21012,
+      "email": "juxhin@gmail.com",
+      "password": "123",
+      "idRole": "1",
+      "isActive": true,
+      "id": 8
+    },
+    {
+      "name": "juxhin",
+      "surname": "Xhihani",
+      "user": "juxhin",
+      "phone": 28572,
+      "email": "juxhin@gmail.com",
+      "password": "1234",
+      "idRole": "1",
+      "isActive": true,
+      "id": 9
+    }
+  ],
+  "hr-table": [
+    {
+      "CandidateName": "Alba",
+      "CandidateSurname": "Celaj",
+      "CandidateMobile": "0674931560",
+      "CandidateEmail": "albacela@outlook.com",
+      "Position": "64",
+      "CandidateCv": "",
+      "datecreated": "2022-03-22T09:56:19.1919",
+      "id": 3
+    },
+    {
+      "CandidateName": "Klara",
+      "CandidateSurname": "Zyko",
+      "CandidateMobile": "00355684520150",
+      "CandidateEmail": "klara@gmail.com",
+      "Position": "65",
+      "CandidateCv": "",
+      "datecreated": "2022-03-22T09:56:40.4040",
+      "id": 4
+    },
+    {
+      "CandidateName": "Antoneta",
+      "CandidateSurname": "Anto",
+      "CandidateMobile": "0686345637",
+      "CandidateEmail": "anto@gmail.com",
+      "Position": "80",
+      "CandidateCv": "",
+      "datecreated": "2022-04-01T14:09:09.099",
+      "id": 5
+    },
+    {
+      "CandidateName": "Antoniette",
+      "CandidateSurname": "Rustemi",
+      "CandidateMobile": "+355685137946",
+      "CandidateEmail": "klara@gmail.com",
+      "Position": "80",
+      "CandidateCv": "",
+      "datecreated": "2022-04-01T14:23:41.4141",
+      "id": 6
+    }
+  ],
+  "hr-add-new-vacancy": [
+    {
+      "VacancyName": "Kryespecialist Zhvillues ne Skuader Agile (grada 11) – Divizioni I IT",
+      "VacancyDescription": "Njoftim për pozicion të lirë pune\n\n Personat e interesuar janë të inkurajuar të aplikojnë duke paraqitur pranë Divizionit të Burimeve Njerëzore brenda dates se specifikuar ne pershkrim:\n \n- CV të hollësishme \n",
+      "id": 1
+    },
+    {
+      "VacancyName": "Specialist i Marredhenieve me Klientet ",
+      "VacancyDescription": "Njoftim për pozicion të lirë pune\n\n Personat e interesuar janë të inkurajuar të aplikojnë duke paraqitur pranë Divizionit të Burimeve Njerëzore brenda dates se specifikuar ne pershkrim:\n \n- CV të hollësishme \n",
+      "id": 2
+    },
+    {
+      "VacancyName": "Përgjegjes i Menaxhimit të Shërbimeve ",
+      "VacancyDescription": "Njoftim për pozicion të lirë pune\n \nDepartamenti i Eksperiencës dhe Zhvillimit të Klientit\n\n Personat e interesuar janë të inkurajuar të aplikojnë duke paraqitur pranë Divizionit të Burimeve Njerëzore brenda dates se specifikuar ne pershkrim:\n \n- CV të hollësishme \n",
+      "id": 3
+    },
+    {
+      "VacancyName": "Drejtor Dege – Rr e Kavajes  (grada 13) ",
+      "VacancyDescription": "Distrikti Tirana 1/Divizioni i Shitjeve dhe Kanaleve te Shperndarjes",
+      "id": 4
+    },
+    {
+      "VacancyName": "Specialist i Biznesit Mikro  (grada 9) ",
+      "VacancyDescription": "Divizioni Micro & SE",
+      "id": 5
+    },
+    {
+      "VacancyName": "As/Specialist i Biznesit Korporate per Institucionet publike (grada 9)",
+      "VacancyDescription": "Divizioni i Biznesit Korporate",
+      "id": 6
+    },
+    {
+      "VacancyName": "Zhvillues",
+      "VacancyDescription": "Zhvillues",
+      "id": 9
+    },
+    {
+      "VacancyName": "Test",
+      "VacancyDescription": "Test",
+      "isActive": "",
+      "id": 10
+    },
+    {
+      "VacancyName": "",
+      "VacancyDescription": "",
+      "isActive": "",
+      "id": 11
+    }
+  ],
+  "valid": [
+    {
+      "idVacancy": "64",
+      "idCandidate": 2,
+      "isValid": true,
+      "dateCreated": "2022-04-05T02:32",
+      "id": 12
+    },
+    {
+      "idVacancy": "80",
+      "idCandidate": 8,
+      "isValid": true,
+      "dateCreated": "2022-04-06T06:49",
+      "id": 13
+    },
+    {
+      "idVacancy": 80,
+      "idCandidate": 10,
+      "isValid": true,
+      "dateCreated": "2022-04-14T10:50",
+      "id": 14
+    }
+  ],
+  "InterviewResult": [],
+  "calendar": [
+    {
+      "idTeamLead": "16",
+      "idCandidate": "3",
+      "idVacancy": "64",
+      "startTime": "2022-04-06T19:11",
+      "endTime": "2022-04-06T17:12",
+      "id": 1
+    },
+    {
+      "id": 2,
+      "idTeamLead": "16",
+      "idCandidate": "3",
+      "idVacancy": "64",
+      "startTime": "2022-04-06T20:03",
+      "endTime": "2021-04-28T20:03"
+    }
+  ],
+  "blacklist": [
+    {
+      "reason": "gdsvv",
+      "idCandidate": 2,
+      "idUserCreated": 17,
+      "id": 1
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+
+table {
+  width: 100%;
+  margin-top: 8%;
+}
+th{
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+section{
+  float: right;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+}
+#btn{
+  background-color: #f5d607;
+  color: black;
+}
+#btn:hover{
+  background-color: black;
+  color: white;
+}
+#btn:active{
+  transform: scale(0.9);
+}
+

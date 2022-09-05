@@ -1,0 +1,19 @@
+<div class="main-div">
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title>Give reason to move to blacklist</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form class="example-form" [formGroup]="blacklistForm">
+      <mat-label>Reason</mat-label>
+      <br>
+      <mat-form-field style="width: 500px;" class="mat-form-field-fluid">
+        <textarea style="height: 100px;" matInput required class="control" formControlName="reason" name="Reason"
+                  placeholder="Give reason"></textarea>
+      </mat-form-field>
+      <br>
+      <button id="btn1" mat-raised-button color="primary" [mat-dialog-close]="true" type="submit" (click)="moveBlacklist()">Save</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

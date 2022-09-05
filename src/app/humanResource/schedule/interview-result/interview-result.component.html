@@ -1,0 +1,79 @@
+<div class="main-div">
+  <!--  <mat-card class="example-card">-->
+  <mat-card-content>
+    <form class="example-form" [formGroup]="resultsForm">
+      <mat-grid-list cols="2">
+        <mat-grid-tile>
+          <div>
+            <mat-label>Result From TL</mat-label>
+            <br>
+            <mat-form-field class="mat-form-field-fluid">
+              <button matSuffix mat-icon-button disabled=true style="margin-right: 22px;">/10.00</button>
+              <input matInput type="number" class="control" formControlName="resultFromTL" name="resultFromTL"
+                     placeholder="Result From TL ">
+            </mat-form-field>
+            <br>
+            <mat-label>Result From HR</mat-label>
+            <br>
+            <mat-form-field class="mat-form-field-fluid">
+              <button matSuffix mat-icon-button disabled=true style="margin-right: 22px;">/10.00</button>
+              <input matInput type="number" class="control" formControlName="resultFromHR" name="resultFromHR"
+                     placeholder="Result From HR">
+            </mat-form-field>
+            <br>
+            <mat-label>Offered Salary</mat-label>
+            <br>
+            <mat-form-field class="mat-form-field-fluid">
+              <button matSuffix mat-icon-button disabled=true style="margin-right: 22px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ALL</button>
+              <input matInput type="number" class="control" formControlName="offeredSalary" name="offeredSalary"
+                     placeholder="Offered Salary">
+            </mat-form-field>
+            <br>
+            <mat-label>Requested Salary</mat-label>
+            <br>
+            <mat-form-field class="mat-form-field-fluid">
+              <button matSuffix mat-icon-button disabled=true style="margin-right: 22px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ALL</button>
+              <input matInput type="number" class="control" formControlName="requestedSalary" name="requestedSalary"
+                     placeholder="Requested Salary">
+            </mat-form-field>
+          </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <div>
+            <mat-label style="margin-bottom: 20px;">Offer Acceptance:&nbsp;&nbsp;</mat-label>
+            <br>
+            <mat-radio-group>
+              <mat-radio-button style="margin-right:10px; " value=true color="primary">Yes</mat-radio-button>
+              <mat-radio-button value=false color="warn">No</mat-radio-button>
+            </mat-radio-group>
+            <br>
+            <mat-label>Candidate Comment</mat-label>
+            <br>
+            <mat-form-field style="width: 223px;" class ="mat-form-field-fluid">
+          <textarea matInput  class="control" formControlName="candidateComments"
+                    name="candidateComments"
+                    placeholder="Candidate Comment"></textarea>
+            </mat-form-field>
+            <br>
+            <mat-label>Interview Comment</mat-label>
+            <br>
+            <mat-form-field style="width: 223px;" class="mat-form-field-fluid">
+          <textarea matInput required class="control" formControlName="interviewComments" name="interviewComments"
+                    placeholder="Interview Comment"></textarea>
+            </mat-form-field>
+            <br>
+            <button id="btn1" mat-raised-button color="primary" [mat-dialog-close]="true" (click)="onSubmit()"
+                    type="submit">Save
+            </button>
+            <button id="btn2" mat-raised-button color="primary" style="margin-left: 10px;" [mat-dialog-close]="true" (click)="onSubmit()"
+                    type="submit">Back
+            </button>
+
+          </div>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </form>
+  </mat-card-content>
+  <!--  </mat-card>-->
+</div>
+

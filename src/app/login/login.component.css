@@ -1,0 +1,117 @@
+
+.buton_log{
+  margin-top: 20px;
+  background-color: white;
+  color: black;
+  border: none;
+  text-decoration: none;
+}
+
+.buton_log:hover{
+  background-color: #fff207;
+}
+.reg_log{
+  background-color: black;
+  color: white;
+  margin-left: 20px;
+  margin-top: 20px;
+  border: none;
+  text-decoration: none;
+}
+.reg_log:hover{
+  background-color: #343a3c;
+}
+#footer {
+  position: fixed;
+  bottom:0;
+  width:100%;
+  height:100px;
+  background:#fff207;
+}
+
+.card{
+  border:none;
+  width: 500px;
+  padding: 60px;
+  position:absolute;
+  top: 50%;
+  left: 50%;
+  transform:translate(-50%,-50%);
+  background-color: #343a3c;
+}
+
+.card h1,  h6{
+  color: #fff;
+}
+label{
+  color: #fff;
+}
+a{
+  color: white;
+  text-decoration: underline;
+  margin-top: 10px;
+}
+.form-group{
+ padding-bottom: 10px;
+}
+
+#footer {
+  position: fixed;
+  bottom:0;
+  width:100%;
+  height:67.93px;
+  background:#fff207;
+}
+.footer_text{
+
+  bottom: 0;
+  float: right;
+  top: 60%;
+  position: relative;
+  font-size: 18px;
+  margin-right: 10px;
+}
+nav{
+  position: fixed;
+  top: 0;
+  max-width: 100%;
+  background-color: #fff207;
+  width: 100%;
+}
+img{
+  padding-left: 10px;
+}
+h2
+{ color: black;
+  float:right;
+  font-weight: bold;
+  padding-top: 8px;
+  font-size: 20px;
+
+}
+* {
+  font-family: iranyekan;
+}
+.input-icons i {
+  position: absolute;
+}
+
+.input-icons {
+  width: 100%;
+
+}
+
+.icon {
+
+  color: green;
+  min-width: 50px;
+}
+
+.input-field {
+  width: 100%;
+  text-align: center;
+}
+
+
+
+

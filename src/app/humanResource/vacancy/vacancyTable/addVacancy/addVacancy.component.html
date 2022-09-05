@@ -1,0 +1,40 @@
+<div class="main-div">
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title>Add new vacancy</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form class="example-form" [formGroup]="hrForm">
+        <mat-label>Vacancy Name</mat-label>
+        <br>
+        <mat-form-field class="mat-form-field-fluid">
+          <input matInput required class="control" formControlName="vacancy1" name="VacancyName"
+                 placeholder="VacancyName">
+        </mat-form-field>
+        <br><br>
+        <mat-label>Vacancy Description</mat-label>
+        <br>
+        <mat-form-field class="mat-form-field-fluid">
+          <textarea matInput required class="control" formControlName="description" name="VacancyDescription"
+                    placeholder="VacancyDescription"></textarea>
+        </mat-form-field>
+        <br>
+        <mat-label>Select TeamLeader</mat-label><br><br>
+        <mat-form-field appearance="fill">
+          <mat-label>Select TeamLeader</mat-label>
+          <mat-select formControlName="idTeamLead" (ngModelChange)="formChanged()"
+                      [(ngModel)]="selectedCandidate.idTeamlead">
+            <mat-option>None</mat-option>
+            <mat-option *ngFor="let can of users"  value="{{can.idUser}}">{{can.name}} {{can.surname}}</mat-option></mat-select>
+        </mat-form-field>
+        <br><br>
+        <div class="form-group">
+          <button id="btn1" mat-raised-button color="primary" (click)="onSubmit()" type="submit">Save</button>
+          <button id="btn2" mat-raised-button color="accent" (click)="onNoClick()" tabindex="-1">Back
+          </button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
+

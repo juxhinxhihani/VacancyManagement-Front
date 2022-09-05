@@ -1,0 +1,93 @@
+table {
+  width: 100%;
+  margin-top: 8%;
+}
+th{
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  font-size: 15px;
+}
+.full-width {
+  font-size: 14px;
+  width: 25%;
+  float: right;
+  margin-right: 20px;
+}
+mat-label{
+  padding-left: 2%;
+}
+th{
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  font-size: 15px;
+}
+section{
+  float: right;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+}
+.add{
+  background-color: black;
+  border-radius: 5px;
+  color: white;
+  padding: 10px;
+}
+.add:hover{
+  background-color: yellow;
+  border-radius: 5px;
+  color: black;
+  font-weight: bold;
+}
+.filter{ margin-left: 23px}
+
+mat-icon {
+  cursor: pointer;
+}
+
+/*expanded rows*/
+tr.example-detail-row {
+  height: 0;
+}
+
+td.example-element-row:not(.example-expanded-row):hover {
+  background: whitesmoke;
+}
+
+td.example-element-row:not(.example-expanded-row):active {
+  background: #efefef;
+}
+
+.example-element-row td {
+  border-bottom-width: 0;
+}
+
+.example-element-detail {
+  overflow: hidden;
+  display: flex;
+}
+
+.example-element-diagram {
+  min-width: 80px;
+  padding: 8px;
+  font-weight: lighter;
+  margin: 8px 0;
+  height: 104px;
+}
+
+.example-element-symbol {
+  font-weight: bold;
+  font-size: 40px;
+  line-height: normal;
+}
+
+.example-element-description {
+  padding: 16px;
+}
+
+.example-element-description-attribution {
+  opacity: 0.5;
+}
+

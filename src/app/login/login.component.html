@@ -1,0 +1,51 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet"
+      href=
+        "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<nav class="navbar navbar-light">
+  <a class="navbar-brand" routerLink="/login">
+    <img src="https://media-exp1.licdn.com/dms/image/C4D0BAQHkSZdeJnhK4g/company-logo_200_200/0/1622109565862?e=2159024400&v=beta&t=AEt7JAhTiDqFzoTsRwsDeIshTRqLptQuSaTFuxcZgfU" width="55" height="40" class="d-inline-block align-top" alt="">
+    <h2>VACANCY MANAGEMENT RBAL</h2>
+  </a>
+</nav>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="text-center">
+          <h1 style="text-align: center">Login
+          </h1>
+        </div>
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+          <div class=" input-icons">
+            <label for="Email">Email</label>
+<!--            <i class="fa fa-user icon">-->
+<!--            </i>-->
+            <input  type="email" class="form-control" formControlName="email" id="Email" aria-describedby="emailHelp" placeholder="Email ">
+
+            <span class="text-danger" *ngIf="loginForm.controls['email'].dirty && loginForm.hasError('required','email')">*Username is required</span>
+          </div>
+
+          <div class="form-group">
+            <label for="Password">Password</label>
+            <input type="password" formControlName="password" class="form-control" id="Password" placeholder="Password" autocomplete>
+            <span class="text-danger" *ngIf="loginForm.controls['password'].dirty && loginForm.hasError('required','password')">*Password is required</span>
+          </div>
+          <div  *ngIf="hasError" >
+            <mat-error class="text-danger">Username or Password incorrect!</mat-error>
+          </div>
+          <button type="submit" class="btn btn-primary buton_log" >Login</button>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<div id="footer">
+  <div class="footer_text">©Key Academy 2022</div>
+</div>
+
+
+

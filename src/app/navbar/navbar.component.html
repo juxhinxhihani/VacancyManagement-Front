@@ -1,0 +1,101 @@
+<mat-sidenav-container fullscreen autosize>
+  <mat-sidenav #sidenav mode="side" opened="true" class="example-sidenav">
+    <img src="https://media-exp1.licdn.com/dms/image/C4D0BAQHkSZdeJnhK4g/company-logo_200_200/0/1622109565862?e=2159024400&v=beta&t=AEt7JAhTiDqFzoTsRwsDeIshTRqLptQuSaTFuxcZgfU" width="63px" height="55px">
+        <mat-nav-list>
+          <mat-list-item *ngIf="getRole() === '1'" routerLink="/hr/vacancies" routerLinkActive="active" >
+            <mat-icon mat-list-icon class="lead" *ngIf="!isExpanded" matTooltip="Add new vacancy" >add</mat-icon>
+            <mat-icon mat-list-icon class="lead" *ngIf="isExpanded">add</mat-icon>
+            <div fxFlex="10"></div>
+            <div *ngIf="isExpanded" class="sidenav-item">
+              <h5 class="lead">Add new vacancy</h5>
+            </div>
+          </mat-list-item>
+          <mat-list-item  *ngIf="getRole() === '1'" routerLink="/hr/candidates" routerLinkActive="active" >
+            <mat-icon mat-list-icon class="lead" *ngIf="!isExpanded" matTooltip="Candidate Details" >info</mat-icon>
+            <mat-icon mat-list-icon class="lead" *ngIf="isExpanded">info</mat-icon>
+            <div fxFlex="10"></div>
+            <div *ngIf="isExpanded" class="sidenav-item">
+              <h5 class="lead">Candidate Details</h5>
+            </div>
+          </mat-list-item>
+          <mat-list-item  *ngIf="getRole() === '1'" routerLink="/hr/valid" routerLinkActive="active" >
+            <mat-icon mat-list-icon class="lead" *ngIf="!isExpanded" matTooltip="Valid Candidates" >fact_check</mat-icon>
+            <mat-icon mat-list-icon class="lead" *ngIf="isExpanded">fact_check</mat-icon>
+            <div fxFlex="10"></div>
+            <div *ngIf="isExpanded" class="sidenav-item">
+              <h5 class="lead">Valid Candidates</h5>
+            </div>
+          </mat-list-item>
+          <mat-list-item *ngIf="getRole() === '1'" routerLink="/hr/schedule" routerLinkActive="active" >
+            <mat-icon mat-list-icon class="lead" *ngIf="!isExpanded" matTooltip="Schedule" >schedule</mat-icon>
+            <mat-icon mat-list-icon class="lead" *ngIf="isExpanded">schedule</mat-icon>
+            <div fxFlex="10"></div>
+            <div *ngIf="isExpanded" class="sidenav-item">
+              <h5 class="lead">Schedule</h5>
+            </div>
+          </mat-list-item>
+          <mat-list-item *ngIf="getRole() === '1'" routerLink="/hr/black-list" routerLinkActive="active" >
+            <mat-icon mat-list-icon class="lead" *ngIf="!isExpanded" matTooltip="Blacklist" >list</mat-icon>
+            <mat-icon mat-list-icon class="lead" *ngIf="isExpanded">list</mat-icon>
+            <div fxFlex="10"></div>
+            <div *ngIf="isExpanded" class="sidenav-item">
+              <h5 class="lead">Blacklist</h5>
+            </div>
+          </mat-list-item>
+          <mat-list-item *ngIf="getRole() === '2'" routerLink="/tl/candidates" routerLinkActive="active" >
+            <mat-icon mat-list-icon class="lead" *ngIf="!isExpanded" matTooltip="Candidate Details" >feed</mat-icon>
+            <mat-icon mat-list-icon class="lead" *ngIf="isExpanded">feed</mat-icon>
+            <div fxFlex="10"></div>
+            <div *ngIf="isExpanded" class="sidenav-item">
+              <h5 class="lead">Candidate Details</h5>
+            </div>
+          </mat-list-item>
+          <mat-list-item *ngIf="getRole() === '2'" routerLink="schedule" routerLinkActive="active">
+            <mat-icon mat-list-icon class="lead" *ngIf="!isExpanded" matTooltip="Schedule" >schedule</mat-icon>
+            <mat-icon mat-list-icon class="lead" *ngIf="isExpanded">schedule</mat-icon>
+            <div fxFlex="10"></div>
+            <div *ngIf="isExpanded" class="sidenav-item">
+              <h5 class="lead"><a routerLink="/schedule">Schedule</a></h5>
+            </div>
+          </mat-list-item>
+          <mat-list-item *ngIf="getRole() === '2'" routerLink="/tl/blacklist" routerLinkActive="active">
+            <mat-icon mat-list-icon class="lead" *ngIf="!isExpanded" matTooltip="Black List" >checklist_rtl</mat-icon>
+            <mat-icon mat-list-icon class="lead" *ngIf="isExpanded">checklist_rtl</mat-icon>
+            <div fxFlex="10"></div> <div *ngIf="isExpanded" class="sidenav-item">
+            <h5 class="lead">Black List</h5> </div>
+          </mat-list-item>
+          <mat-list-item *ngIf="getRole() === '3'" routerLink="/user/list" routerLinkActive="active">
+            <mat-icon mat-list-icon class="lead" *ngIf="!isExpanded" matTooltip="Users list" >badge</mat-icon>
+            <mat-icon mat-list-icon class="lead" *ngIf="isExpanded">badge</mat-icon>
+            <div fxFlex="10"></div> <div *ngIf="isExpanded" class="sidenav-item">
+            <h5 class="lead">Users list</h5> </div>
+          </mat-list-item>
+          <mat-list-item *ngIf="getRole() === '3'" routerLink="/user/add" routerLinkActive="active">
+            <mat-icon mat-list-icon class="lead" *ngIf="!isExpanded" matTooltip="Add user"  >person_add_alt</mat-icon>
+            <mat-icon mat-list-icon class="lead" *ngIf="isExpanded">person_add_alt</mat-icon>
+            <div fxFlex="10"></div> <div *ngIf="isExpanded" class="sidenav-item">
+            <h5 class="lead">Add user</h5> </div>
+          </mat-list-item>
+          <div *ngIf="'isUserLoggedIn === true'; else isLogOut">
+          <mat-list-item (click)="logO()" routerLinkActive="active">
+            <mat-icon mat-list-icon class="lead" *ngIf="!isExpanded" matTooltip="Logout" >logout</mat-icon>
+            <mat-icon mat-list-icon class="lead" *ngIf="isExpanded">logout</mat-icon>
+            <div fxFlex="10"></div> <div *ngIf="isExpanded" class="sidenav-item">
+            <h5 class="lead"><a routerLink="/login"> Logout</a></h5></div>
+          </mat-list-item>
+          </div>
+          <ng-template #isLogOut>
+            <a routerLink="/login">Logout</a>
+          </ng-template>
+        </mat-nav-list>
+      </mat-sidenav>
+
+    <div class="example-sidenav-content">
+      <mat-toolbar class="mat-toolbar">
+        <mat-icon mat-list-icon (click)="isExpanded = !isExpanded" [ngClass]="{'rotated': isExpanded}">
+          <span class="material-icons" style="color: white;">menu</span>
+        </mat-icon>
+      </mat-toolbar>
+      <router-outlet></router-outlet>
+    </div>
+</mat-sidenav-container>
