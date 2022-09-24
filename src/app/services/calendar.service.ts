@@ -21,6 +21,9 @@ export class CalendarService {
   getTableInfos() : Observable<any[] | CalendarModel[]>{
     return this.http.get<CalendarModel[]>(this.url).pipe(catchError(this.handleError('getCalendars', [])));
   }
+  getMyInfo(id : number) : Observable<any[] | CalendarModel[]>{
+    return this.http.get<CalendarModel[]>("https://localhost:7141/mySchedule" + '/' + id);
+  }
   create(table:CalendarService):Observable<CalendarService>{
     return this.http.post<CalendarService>(`${this.url}`,table,{headers: this.ACCEPT_TYPE_HEADER});
   }

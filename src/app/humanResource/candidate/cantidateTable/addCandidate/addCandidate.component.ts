@@ -86,8 +86,9 @@ export class AddCandidateComponent implements OnInit {
 
   onSubmit() {
     if (this.id){
-      //this.hrForm.value.idUserLastSaved = parseInt(this.loginAuth.userId());
-      //this.hrForm.value.candidateCv = this.cv;
+      this.hrForm.value.idUserLastSaved = parseInt(this.loginAuth.userId());
+      this.hrForm.value.idUserCreated = parseInt(this.loginAuth.userId());
+      this.hrForm.value.id_Vacancy1 = parseInt(this.hrForm.value.id_Vacancy1);
       if (this.hrForm.valid) {
         this.hrForm.value.datecreated = this.datePipe.transform(new Date(), "yyyy-MM-dd'T'HH:mm:ss.sss");
         console.log(this.hrForm.value);
@@ -111,7 +112,7 @@ export class AddCandidateComponent implements OnInit {
       this.hrForm.value.dateCreated = this.datePipe.transform(new Date(), "yyyy-MM-dd'T'HH:mm:ss.sss");
         console.log(this.hrForm.value)
           this.hrService.create(this.hrForm.value)
-            .subscribe((response) => {
+            .subscribe({next: (response) => {
                 console.log(response);
 
                 this._snackBar.open(' Added Successfully', 'Close', {
@@ -119,15 +120,15 @@ export class AddCandidateComponent implements OnInit {
                   verticalPosition: "bottom"
                 });
                 this.router.navigate(['hr/candidates']);
-              },
+              }, error:
               (error) => {
-                console.log(error);
+                console.log(error.value);
                 this._snackBar.open(error, 'Close', {
                   duration: 9000,
                   verticalPosition: "bottom"
                 });
 
-              });
+              }});
         }
       }
   }

@@ -46,6 +46,11 @@ export class MoveBlacklistComponent implements OnInit {
       this.http.post<any>("https://localhost:7141/blacklist", this.blacklistForm.value, {headers: new HttpHeaders({'Content-Type': 'application/json'})}).subscribe({
         next:
           res => {
+            this.hrService.deleteTable(parseInt(this.data.element.idCandidate)).subscribe((result) => {
+              console.log(result);
+              this.ngOnInit();
+            });
+           // window.location.reload();
           }, error:
           err => {
             this._snackBar.open('Something went wrong', 'Close', {

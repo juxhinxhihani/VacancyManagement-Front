@@ -17,6 +17,7 @@ export class LoginComponent implements OnInit {
   private userRole: UserRolesModel;
   hasError: boolean = false;
   private userid: any;
+  private isActive: any;
 
   constructor(private formBuilder: FormBuilder,
               private route: Router,
@@ -63,12 +64,13 @@ export class LoginComponent implements OnInit {
       if (result != null) {
         this.responsedata = JSON.stringify(result).split(":");
         this.data = this.responsedata[1].replace("}", "");
-        console.log(this.data);
+
 
         localStorage.setItem('tokenString', this.data);
         this.userRole = this.loginAuth.getUser(this.data);
-        this.userid = this.loginAuth.userId()
-        console.log(this.userid)
+        this.userid = this.loginAuth.userId();
+        this.isActive = this.loginAuth.getUser(this.data).isActive;
+        console.log(this.isActive)
         if (this.userRole.idRole === '1') {
           this.route.navigate(['/hr/vacancies'])
         } else if (this.userRole.idRole === '2') {

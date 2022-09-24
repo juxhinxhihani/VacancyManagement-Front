@@ -4,4 +4,5 @@ export interface UserRolesModel{
   surname: string;
   idRole: string;
   email: string[];
+  isActive: boolean;
 }

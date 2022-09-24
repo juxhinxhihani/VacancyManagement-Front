@@ -36,6 +36,12 @@ export class UserListService {
   update(id: number, fileUpload: newUserModel): Observable<newUserModel> {
     return this.http.put<newUserModel>(`${this.url}/${id}`, fileUpload, {headers: this.ACCEPT_TYPE_HEADER});
   }
+  deactive(id: number): Observable<newUserModel> {
+    return this.http.put<newUserModel>(`https://localhost:7141/deactive/${id}`, {headers: this.ACCEPT_TYPE_HEADER});
+  }
+  deleteTable(id: number) {
+    return this.http.delete<newUserModel>(`${this.url}/${id}`,{headers: this.ACCEPT_HEADER});
+  }
 
   openConfirmDialog(msg: string) {
 

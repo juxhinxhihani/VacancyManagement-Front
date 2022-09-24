@@ -23,9 +23,9 @@ export class Add implements OnInit {
   userForm = new FormGroup({
     name: new FormControl('', [Validators.required, Validators.pattern("^[A-Z]{1}[a-z]+")]),
     surname: new FormControl('', [Validators.required, Validators.pattern("^[A-Z]{1}[a-z]+")]),
-    user: new FormControl('', [Validators.required, Validators.pattern("(ala[a-z]{4})")]),
+    user: new FormControl('', [Validators.required, Validators.pattern("([a-z]{8})")]),
     phone: new FormControl('', [Validators.required, Validators.pattern("^(00355|\\+355|0)[0-9]{9}$")]),
-    email: new FormControl('', [Validators.required, Validators.pattern("^([a-z]+\\.[a-z]+@raiffeisen\\.al)$")]),
+    email: new FormControl('', [Validators.required, Validators.pattern("^([a-z]+\\.[a-z]+@fti\\.edu\\.al)$")]),
     password: new FormControl('', [Validators.required, Validators.pattern("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$")]),
     idRole: new FormControl(0, [Validators.required]),
     isActive: new FormControl(false, [Validators.required])

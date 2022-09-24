@@ -22,6 +22,7 @@ import {LoginAuthService} from "../../services/login-auth.service";
 })
 export class ScheduleComponent implements OnInit {
   displayedColumns = ['TeamLeader', 'Candidate', 'Position', 'StartTime', 'Endtime', 'Action'];
+  displayedColumnTL = ['TeamLeader', 'Candidate', 'Position', 'StartTime', 'Endtime'];
   calendarTable: MatTableDataSource<ScheduleComponent>;
   @ViewChild('paginator') paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
@@ -31,20 +32,29 @@ export class ScheduleComponent implements OnInit {
   filterForm: FormGroup = new FormGroup({});
   calendarData: any[] | CalendarModel[];
   subscriptions: Subscription[];
+  private role: any;
+  dataSource: any;
+  calendarDataForMe: any[] | CalendarModel[];
 
   constructor(private dialog: MatDialog,
               private router: Router,
               // datePipe : DatePipe,
               private authLogin : LoginAuthService,
               private calendarService: CalendarService,
-              private formBuilder: FormBuilder) {
+              private formBuilder: FormBuilder,
+              ) {
   }
 
   ngOnInit(): void {
     this.calendarService.getTableInfos().subscribe(x => {
-      console.log(x)
+      console.log(x);
+      this.calendarService.getMyInfo(parseInt(this.getUser())).subscribe(x => {
+        console.log(x)
+        this.calendarDataForMe = x;
+      });
       this.calendarData = x;
     });
+
     //this.subscriptions.push(sub);
 
     // this.filterForm = this.formBuilder.group({
@@ -80,7 +90,10 @@ export class ScheduleComponent implements OnInit {
     this.router.navigate(['hr/schedule'])
 
   }
-
+  getRole(): string{
+    this.role = this.authLogin.getUser(localStorage.getItem('tokenString')).idRole;
+    return this.role;
+  }
   compareDates(element): boolean {
     //this.ngOnInit();
     //return element.endTime < this.datePipe.transform(new Date(), "yyyy-MM-dd'T'hh:mm");

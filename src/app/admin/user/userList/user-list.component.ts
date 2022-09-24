@@ -4,6 +4,7 @@ import {Router} from "@angular/router";
 import {newUserModel} from "../../../models/newUser.model";
 import {UserListService} from "../../../services/userList.service";
 import {MatSnackBar} from "@angular/material/snack-bar";
+import {HttpClient} from "@angular/common/http";
 
 @Component({
   selector: 'app-userList',
@@ -24,6 +25,7 @@ export class UserListComponent implements OnInit {
 
   constructor(private router: Router,
               private userListService: UserListService,
+              private http : HttpClient,
               private _snackBar: MatSnackBar,
   ) {
   }
@@ -34,7 +36,18 @@ export class UserListComponent implements OnInit {
       this.tableData = allData;
     })
   }
-   decactive(id:number){
-}
+  decactive(id:number){
+      this.userListService.openConfirmDialog("Are you sure you want to active / deactive it?")
+        .afterClosed().subscribe((res => {
+        if (res) {
+          this.userListService.deactive(id).subscribe((result) => {
+            console.log(result);
+            this.ngOnInit();
+          });
+        }
+
+      }))
+      this.router.navigate(['/user/list'])
+  }
 }
 

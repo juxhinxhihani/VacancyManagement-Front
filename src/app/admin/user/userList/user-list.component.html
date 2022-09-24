@@ -38,7 +38,12 @@
       <th mat-header-cell *matHeaderCellDef>Action</th>
       <td mat-cell *matCellDef="let element">
 
-        <button mat-raised-button color="primary" id="btn" (click)="decactive(element.id)">{{showActive ? 'Deactive' : 'Active'}}</button>
+        <button mat-icon-button>
+          <mat-icon matTooltip="{{element.isActive ? 'Deactive' : 'Active'}}" mat-fab color="warn" class="delete" aria-label="delete icon"
+                    (click)="decactive(element.idUser)">
+            {{element.isActive ? 'toggle_on' : 'toggle_off'}}
+          </mat-icon>
+        </button>
       </td>
     </ng-container>
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
