@@ -69,10 +69,12 @@ export class AddVacancyComponent implements OnInit {
 
   onSubmit(): void {
     if (this.id) {
+
       this.hrForm.value.idUserSaved = this.authlogin.getUser(localStorage.getItem('tokenString')).id;
       this.hrForm.value.datesaved = this.datePipe.transform(new Date(), "yyyy-MM-dd'T'HH:mm:ss.sss");
       if (this.hrForm.valid) {
         console.log(this.hrForm.value.idUserSaved);
+        this.hrForm.value.idTeamLead = parseInt((this.hrForm.value.idTeamLead));
         this.hrServiceT.update(this.id, this.hrForm.value)
           .subscribe(() => {
             this._snackBar.open(' Updated Successfully', 'Close', {
@@ -85,6 +87,7 @@ export class AddVacancyComponent implements OnInit {
     } else {
       this.hrForm.value.dateCreated = this.datePipe.transform(new Date(), "yyyy-MM-dd'T'HH:mm:ss.sss");
       this.hrForm.value.datesaved = this.datePipe.transform(new Date(), "yyyy-MM-dd'T'HH:mm:ss.sss");
+      this.hrForm.value.idTeamLead = parseInt((this.hrForm.value.idTeamLead));
       if (this.hrForm.valid) {
         this.hrForm.value.isActive = true;
         this.hrForm.value.idUserCreated = parseInt(this.authlogin.userId());
@@ -120,7 +123,7 @@ export class AddVacancyComponent implements OnInit {
   }
 
   showall() {
-    return this.userList.getAllTable().subscribe(
+    return this.userList.getTeamleaders().subscribe(
       (data: any) => {
         this.users = data;
       }

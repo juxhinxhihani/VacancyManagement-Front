@@ -29,6 +29,9 @@ export class HrTableService {
   update(id:number, fileUpload:HrCandidateModel): Observable<HrCandidateModel>{
     return this.http.put<HrCandidateModel>(`${this.url}/${id}`, fileUpload, {headers: this.ACCEPT_TYPE_HEADER});
   }
+  makeInvalid(id: number){
+    return this.http.put<HrCandidateModel>(`${this.url}/makeValid/${id}`,{headers: this.ACCEPT_TYPE_HEADER})
+  }
   openConfirmDialog(msg: string) {
 
     return this.dialog.open(DialogComponent, {

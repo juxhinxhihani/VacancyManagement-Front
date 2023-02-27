@@ -21,7 +21,7 @@ import {HrCandidateModel} from "../../../models/hrCandidate.model";
 })
 export class ScheduleFormComponent implements OnInit {
   selectedUser: any = {
-    idUser: 0, name: '', surname: ''
+    Id_Teamleader: 0, name: '', surname: ''
   }
   id: number;
   users: any;
@@ -39,11 +39,11 @@ export class ScheduleFormComponent implements OnInit {
   ) { }
 
   scheduleForm = new FormGroup({
-    id_Teamleader: new FormControl(0, [Validators.required]),
+    Id_Teamleader: new FormControl(0),
     id_Candidate1 : new FormControl(0, [Validators.required]),
     id_Vacancy: new FormControl(0, [Validators.required]),
-    start_Time : new FormControl('', [Validators.required]),
-    end_Time : new FormControl('', [Validators.required]),
+    start_Time : new FormControl('s', [Validators.required]),
+    end_Time : new FormControl('s', [Validators.required]),
 
   });
   ngOnInit(): void {
@@ -56,19 +56,26 @@ export class ScheduleFormComponent implements OnInit {
   onSubmit() {
     this.scheduleForm.value.id_Candidate1 = parseInt(this.data.element.idCandidate);
     this.scheduleForm.value.id_Vacancy = parseInt(this.data.element.idVacancy);
+    this.scheduleForm.value.Id_Teamleader = parseInt(this.scheduleForm.value.Id_Teamleader);
     this.scheduleForm.value.start_Time = this.datePipe.transform(this.scheduleForm.value.start_Time, "yyyy-MM-dd'T'HH:mm:ss.sss");
     this.scheduleForm.value.end_Time = this.datePipe.transform(this.scheduleForm.value.end_Time, "yyyy-MM-dd'T'HH:mm:ss.sss");
     if (this.scheduleForm.valid){
       this.calendarService.create( this.scheduleForm.value)
         .subscribe({ next :
             response => {
-            console.log(response);
-
-            this._snackBar.open('Calendar Added Successfully', 'Close', {
-              duration: 3000,
-              verticalPosition: "bottom"
-            });
-
+            if (response){
+              debugger
+              this.http.delete('https://localhost:7141/deleteVacancyCandidate/?id='+ parseInt(this.data.element.idVacancyCanddate), {headers:new HttpHeaders({'Accept': 'application/json'})}).
+              subscribe({
+                next:
+                  res => {
+                    this._snackBar.open('Calendar Added Successfully', 'Close', {
+                      duration: 3000,
+                      verticalPosition: "bottom"
+                    });
+                    this.refresh();
+                  }
+            })};
           }, error :
           err => {
             console.log(err)

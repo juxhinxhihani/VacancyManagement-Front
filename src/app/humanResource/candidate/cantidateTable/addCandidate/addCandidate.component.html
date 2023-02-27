@@ -37,7 +37,7 @@
             <mat-option *ngFor="let vac of vacancies" value= "{{vac.idVacancy}}">{{vac.vacancy1}}</mat-option>
           </mat-select>
         </mat-form-field>
-        <span class="text-danger" *ngIf="hrForm.controls['id_Vacancy1'].touched">*Position is invalid</span>
+<!--        <span class="text-danger" *ngIf="hrForm.controls['id_Vacancy1'].touched">*Position is invalid</span>-->
         <br><br>
 <!--        upload a file-->
         <input  type="file" name="candidateCv" class="file-upload" (change)="handleUpload($event)" >

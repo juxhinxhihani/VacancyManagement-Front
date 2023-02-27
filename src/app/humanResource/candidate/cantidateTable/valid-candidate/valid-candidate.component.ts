@@ -29,8 +29,8 @@ export class ValidCandidateComponent implements OnInit {
 
   element: ValidModel | undefined;
 
-  displayedColumnsHr: string[] = ['CandidateName', 'idVacancy', 'action'];
-  displayedColumnsTl: string[] = ['CandidateName', 'CandidateSurname', 'CandidateCv', 'action'];
+  displayedColumnsHr: string[] = ['CandidateName', 'CandidateSurname', 'candidateEmail', 'idVacancy', 'action'];
+  displayedColumnsTl: string[] = ['CandidateName', 'CandidateSurname', 'candidateEmail', 'CandidateCv', 'action'];
   validTable: ValidModel;
   tableData: any;
   newSize = 0;

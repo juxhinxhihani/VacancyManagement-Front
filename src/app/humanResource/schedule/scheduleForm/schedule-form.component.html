@@ -9,9 +9,10 @@
         <br>
         <mat-form-field appearance="fill">
           <mat-label>Select TeamLeader</mat-label>
-          <mat-select formControlName="id_Teamleader" (ngModelChange)="formChanged()"
-                      [(ngModel)]="selectedUser.idTeamlead">
-            <mat-option *ngFor="let can of users"  value="{{can.idUser}}">{{can.name}} {{can.surname}}</mat-option></mat-select>
+          <mat-select formControlName="Id_Teamleader" (ngModelChange)="formChanged()"
+                      [(ngModel)]="selectedUser.Id_Teamleader">
+            <mat-option>None</mat-option>
+            <mat-option *ngFor="let can of users" value="{{can.idUser}}">{{can.name}} {{can.surname}}</mat-option></mat-select>
         </mat-form-field><br><br>
         <mat-label>Start Time</mat-label><br>
         <mat-form-field class="mat-form-field-fluid">

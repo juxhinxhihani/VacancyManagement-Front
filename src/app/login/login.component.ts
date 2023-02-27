@@ -62,6 +62,7 @@ export class LoginComponent implements OnInit {
   login() {
     this.loginAuth.login(this.loginForm.value.email, this.loginForm.value.password).subscribe(result => {
       if (result != null) {
+
         this.responsedata = JSON.stringify(result).split(":");
         this.data = this.responsedata[1].replace("}", "");
 

@@ -19,19 +19,11 @@ import {animate, state, style, transition, trigger} from "@angular/animations";
   templateUrl: './blacklist.component.html',
   styleUrls: ['./blacklist.component.css'],
   viewProviders: [MatExpansionPanel],
-  // expanded rows
-  animations: [
-    trigger('detailExpand', [
-      state('collapsed', style({height: '0px', minHeight: '0'})),
-      state('expanded', style({height: '*'})),
-      transition('expanded <=> collapsed', animate('225ms cubic-bezier(0.4, 0.0, 0.2, 1)')),
-    ]),
-  ],
 })
 export class BlacklistComponent implements OnInit {
   tableData: any;
 
-  displayedColumns: string[] = ['CandidateName','CandidateSurname', 'DatetimeCreated'];
+  displayedColumns: string[] = ['CandidateName','CandidateSurname','UserCreated', 'Reason', 'DatetimeCreated'];
   @ViewChild('paginator') paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
   @ViewChild('table', {static: false}) table: MatTable<any>;

@@ -107,6 +107,12 @@ export class CandidateTableComponent implements OnInit {
         this.http.post<any>("https://localhost:7141/vacancyCandidates", this.validForm.value, {headers: new HttpHeaders({'Content-Type': 'application/json'})}).subscribe({
           next:
             res => {
+            if (res){
+              this.hrService.makeInvalid(element.idCandidate).subscribe((result) => {
+                console.log(result);
+                this.ngOnInit();
+              });
+            }
             }, error:
             err => {
             console.log(err)
@@ -135,7 +141,7 @@ export class CandidateTableComponent implements OnInit {
     this.hrService.openConfirmDialog('Are you sure you want to delete it?')
       .afterClosed().subscribe((res => {
       if (res) {
-        this.hrService.deleteTable(id).subscribe((result) => {
+        this.hrService.makeInvalid(id).subscribe((result) => {
           console.log(result);
           this.ngOnInit();
         });
